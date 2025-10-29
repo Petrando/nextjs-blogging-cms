@@ -13,8 +13,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: { category: string } }) {
-  const { category } = params;
+export async function generateMetadata({ params }: { params: Promise<{ category: string }> }) {
+  const { category } = await params;
 
   return {
     title: category.toLocaleUpperCase(),
@@ -22,9 +22,10 @@ export function generateMetadata({ params }: { params: { category: string } }) {
   };
 }
 
-export default function Page({ params }: { params: { category: string } }) {
+export default async function Page({ params }: { params: Promise<{ category: string }> }) {
+    const { category } = await params;
   const posts = getBlogPosts().filter(
-    (post) => post.metadata.category === params.category
+    (post) => post.metadata.category === category
   );
 
   if (!posts.length) {
