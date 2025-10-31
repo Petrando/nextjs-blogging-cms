@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 
   return {
     title: category.toLocaleUpperCase(),
-    description: `All articles reagarding ${category}`,
+    description: `All articles regarding ${category}`,
   };
 }
 
