@@ -89,7 +89,7 @@ export default async function Page({
             url: `${baseUrl}/blog/${post.metadata.category}/${post.slug}`,
             author: {
               "@type": "Person",
-              name: "Coding Jitsu Blog",
+              name: "Petrando Richard Blog",
             },
           }),
         }}
