@@ -27,9 +27,9 @@ export function MainNav({ className }: { className?: string }) {
       )}
     >
       <Link href={"/"}>
-        <div className="flex items-center justify-between w-32">
-          <Icons.logo className="h-6 w-6" />
-          <p>Coding Jitsu</p>
+        <div className="flex items-center justify-between min-w-32 w-fit gap-2">
+          <Icons.logo className="h-8 w-8" />
+          <p>{"Petrando's Bloggin' Practice"}</p>
         </div>
       </Link>
       <NavigationMenu>
